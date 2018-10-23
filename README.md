@@ -1,2 +1,2 @@
 # study
-学习ing
+studying, fighting, go ahead.
