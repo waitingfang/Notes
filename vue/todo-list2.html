@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todolist</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<input v-model="value">
+		<button v-on:click="handleSubmit">submit</button>
+		<ul>
+                        <!-- <li v-for="item in items" :key="item">{{item}}</li> -->
+			<todo-item v-for="item in items" :key="item":content="item"></todo-item>
+		</ul>
+	</div>
+
+	<script>
+		Vue.component("todo-item",{
+			props:["content"],
+			template:"<li>{{content}}</li>"
+		})
+		new Vue({
+			el:"#root",
+			data:{
+				value:"hello world",
+				items:[]
+			},
+			methods:{
+				handleSubmit:function(){
+					this.items.push(this.value);
+					this.value=""
+				}
+			}
+			
+		
+		})
+	</script>
+</body>
+</html>
