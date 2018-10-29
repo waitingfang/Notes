@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue demo</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<!-- 挂载点 模板 实例的关系 -->
+	<div id="root">
+		<!-- {{ }}插入表达式 -->
+		<!-- v-text 会转译  v-html不会转译 -->
+		<h1>{{num}}</h1>
+		<div v-on:click="handClick">{{msg}}</div>
+		<!-- <div v-bind:title="title">{{msg}}</div> -->
+		<!-- <h1 v-text="content"></h1>  -><h1>hello</h1>  -->
+		<!-- <h1 v-html="content"></h1>  ->hello   -->
+		<div v-if="show">honey</div>
+		<button @click="handleClick">toggle</button>
+		<ul>
+			<li v-for="item in items" :key="item">{{item}}</li>
+		</ul>
+		<!-- 双向数据绑定 -->
+		姓：<input v-model="contont1">
+		名：<input v-model="contont2">
+		<div>{{contont}}</div>
+		<div>{{count}}</div>
+	</div>
+
+	<script type="text/javascript">
+		new Vue({
+			el:"#root",
+			data:{
+				msg:"hello world",
+				title:"this is a title",
+				num:123,
+				content:"this is a content",
+				contont1:"",
+				contont2:"",
+				count:0,
+				show:true,
+				items:["one","two","three"]
+			},
+			computed:{
+				contont:function(){
+					return this.contont1 + " " + this.contont2;
+				}
+			},
+			methods:{
+				handClick:function(){
+					this.msg="vue vue vue";
+				},
+				handleClick:function(){
+					this.show=!this.show;
+				}
+			},
+			watch:{
+				contont1:function(){
+					this.count++
+				},
+				contont1:function(){
+					this.count++
+				}
+			}
+		})
+	</script>
+</body>
+</html>
+
