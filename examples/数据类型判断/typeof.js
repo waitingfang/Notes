@@ -1,5 +1,5 @@
 //封装判断数据类型的方法
-////如果obj不是对象 typeof操作符 如果obj是对象 toString [object Object]
+//如果obj不是对象 typeof操作符 如果obj是对象 toString [object Object]
 function type(obj) {
 	let typeMap = {};
 	"Null Object Array Date RegExp Function".split(" ").forEach((item, index) => {
