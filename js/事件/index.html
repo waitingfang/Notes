@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+</head>
+<body>
+    <div class="div1">div1
+        <div class="div2">div2</div>
+    </div>
+    <script>
+        const div1 = document.getElementsByClassName("div1")[0];
+        const div2 = document.getElementsByClassName("div2")[0];
+        function div1Click(){
+            console.log("冒泡阶段div1");
+        };
+        function div2Click(e){
+            console.log("冒泡阶段div2");
+            e.stopPropagation();
+        };
+        div1.addEventListener("click",div1Click,false); // 冒泡阶段
+        div2.addEventListener("click",div2Click,false); // 冒泡阶段
+        // div2.stopPropagation();
+        // function d1Click(){
+        //     console.log("捕获阶段div1");
+        // };
+        // function d2Click(){
+        //     console.log("捕获阶段div2");
+        // };
+        // div1.addEventListener("click",d1Click,true); // 捕获阶段
+        // div2.addEventListener("click",d2Click,true); // 捕获阶段
+    </script>
+</body>
+</html>
