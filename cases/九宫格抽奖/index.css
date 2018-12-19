@@ -1,0 +1,45 @@
+body,html,div,ul,li,a{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+.container{
+    position: relative;
+    margin: 20px auto;
+    width:300px;
+    height:300px;
+}
+.box{
+    width:300px;
+    height:300px;
+    font-size: 0;
+}
+.box li,.box a{
+    display:inline-block;
+    width:100px;
+    height:100px;
+    background: orange;
+    font-size: 12px;
+    text-align: center;
+    line-height: 100px;
+    border:1px solid #fff;
+    box-sizing: border-box;
+}
+.box .active{
+    border:2px solid #02c8fa;
+}
+.box a{
+    color:#000;
+}
+.cover{
+    position: absolute;
+    display: none;
+    top:0;
+    left:75px;
+    width:150px;
+    height:60px;
+    text-align: center;
+    line-height: 60px;
+    background: pink;
+}

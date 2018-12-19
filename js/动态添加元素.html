@@ -1,0 +1,36 @@
+<script>
+function addNode(){
+	var newP=document.createElement("p");
+	var textNode=document.createTextNode("this is a girl");
+	newP.appendChild(textNode);
+	<!-- document.write(newP); -->
+	document.body.appendChild(newP);
+}
+// 数组去重
+// 用splice方法
+function distinct(arr){
+	for(var i=0;i<arr.length;i++){
+		for(var j=i+1;j<arr.length;j++){
+			if(arr[i]==arr[j]){
+				arr.splice(j,1);
+				j--;
+			}
+		}
+	}
+	return arr;
+}
+var arr=[1,2,3,3,4,5,3,2];
+distinct(arr);
+// indexOf 方法
+function distinct(arr){
+	var result=[];
+	for(var i=0;i<arr.length;i++){
+		if(result.indexOf(arr[i]) == -1){
+			result.push(arr[i]);
+		}
+	}
+	console.log(result);
+}
+var arr=[1,2,3,3,4,5,3,2];
+distinct(arr);
+</script>
